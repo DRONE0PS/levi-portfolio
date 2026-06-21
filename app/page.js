@@ -495,7 +495,6 @@ export default function Home() {
               <div style={{ color: "rgba(255,255,255,0.25)" }}>// shipped 🚀</div>
             </div>
           </div>
-          </div>
         </div>
       </section>
 
