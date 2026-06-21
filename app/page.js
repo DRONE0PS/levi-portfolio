@@ -443,8 +443,55 @@ export default function Home() {
             <div style={{ width: 1, height: 36, background: "rgba(0,0,0,0.1)" }} />
             <div style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--ink)", lineHeight: 1.5 }}>
               Drone Battery Management System<br />
-              Study App
+              PASSMASTER
             </div>
+
+          {/* FLOATING WORKSPACE - EDITOR CARD */}
+          <div
+            className="float-slow"
+            style={{
+              marginTop: 64,
+              maxWidth: 380,
+              background: "#1c1c22",
+              borderRadius: 18,
+              padding: 0,
+              boxShadow: "0 24px 48px rgba(0,0,0,0.18)",
+              transform: "rotate(-3deg)",
+              overflow: "hidden",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "12px 16px",
+                borderBottom: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
+              <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ff5f56" }} />
+              <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ffbd2e" }} />
+              <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#27c93f" }} />
+              <span
+                style={{
+                  marginLeft: 8,
+                  fontFamily: "var(--font-body)",
+                  fontSize: 11,
+                  color: "rgba(255,255,255,0.4)",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                index.js
+              </span>
+            </div>
+            <div style={{ padding: "18px 20px", fontFamily: "monospace", fontSize: 12.5, lineHeight: 1.9 }}>
+              <div><span style={{ color: "#c586c0" }}>const</span> <span style={{ color: "#9cdcfe" }}>fleet</span> = <span style={{ color: "#c586c0" }}>new</span> <span style={{ color: "#4ec9b0" }}>DroneFleet</span>();</div>
+              <div><span style={{ color: "#c586c0" }}>function</span> <span style={{ color: "#dcdcaa" }}>deploy</span>() {`{`}</div>
+              <div style={{ paddingLeft: 16 }}><span style={{ color: "#c586c0" }}>return</span> <span style={{ color: "#ce9178" }}>"ready"</span>;</div>
+              <div>{`}`}</div>
+              <div style={{ color: "rgba(255,255,255,0.25)" }}>// shipped 🚀</div>
+            </div>
+          </div>
           </div>
         </div>
       </section>
