@@ -99,6 +99,7 @@ export default function Home() {
             padding: "10px 18px",
             borderRadius: 999,
             marginLeft: 8,
+            whiteSpace: "nowrap",
           }}
         >
           Hire Me
