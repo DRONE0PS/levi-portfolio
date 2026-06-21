@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Code2, LayoutGrid, Lightbulb } from "lucide-react";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -639,9 +640,9 @@ export default function Home() {
             }}
           >
             {[
-              { title: "Frontend Development", desc: "React, Next.js, responsive interfaces built to last." },
-              { title: "UI / Design Systems", desc: "Consistent, scalable design language across products." },
-              { title: "Problem Solving", desc: "Real-world constraints, real working solutions." },
+              { title: "Frontend Development", desc: "React, Next.js, responsive interfaces built to last.", Icon: Code2 },
+              { title: "UI / Design Systems", desc: "Consistent, scalable design language across products.", Icon: LayoutGrid },
+              { title: "Problem Solving", desc: "Real-world constraints, real working solutions.", Icon: Lightbulb },
             ].map((item) => (
               <div
                 key={item.title}
@@ -660,8 +661,13 @@ export default function Home() {
                     borderRadius: 10,
                     background: "var(--orange-soft)",
                     marginBottom: 14,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
-                />
+                >
+                  <item.Icon size={18} color="var(--orange)" strokeWidth={2.2} />
+                </div>
                 <h3
                   style={{
                     fontFamily: "var(--font-display)",
