@@ -450,8 +450,9 @@ export default function Home() {
           <div
             className="float-slow"
             style={{
-              marginTop: 64,
               maxWidth: 380,
+              width: "100%",
+              margin: "64px auto 0",
               background: "#1c1c22",
               borderRadius: 18,
               padding: 0,
@@ -484,7 +485,7 @@ export default function Home() {
                 index.js
               </span>
             </div>
-            <div style={{ padding: "18px 20px", fontFamily: "monospace", fontSize: 12.5, lineHeight: 1.9 }}>
+            <div style={{ padding: "16px 18px", fontFamily: "monospace", fontSize: 12, overflowWrap: "break-word", whiteSpace: "pre-wrap", lineHeight: 1.9 }}>
               <div><span style={{ color: "#c586c0" }}>const</span> <span style={{ color: "#9cdcfe" }}>fleet</span> = <span style={{ color: "#c586c0" }}>new</span> <span style={{ color: "#4ec9b0" }}>DroneFleet</span>();</div>
               <div><span style={{ color: "#c586c0" }}>function</span> <span style={{ color: "#dcdcaa" }}>deploy</span>() {`{`}</div>
               <div style={{ paddingLeft: 16 }}><span style={{ color: "#c586c0" }}>return</span> <span style={{ color: "#ce9178" }}>"ready"</span>;</div>
