@@ -30,6 +30,42 @@ export default function Home() {
           .nav-burger { display: flex; }
           .nav-hire-desktop { display: none; }
         }
+        .ghost-name {
+          font-family: var(--font-pixel);
+          position: absolute;
+          font-weight: 700;
+          color: transparent;
+          -webkit-text-stroke: 1.5px rgba(20,20,26,0.10);
+          line-height: 0.85;
+          z-index: 0;
+          user-select: none;
+          pointer-events: none;
+          white-space: nowrap;
+        }
+        .float-slow {
+          animation: floatY 6s ease-in-out infinite;
+        }
+        .float-slow-delay {
+          animation: floatY 7s ease-in-out infinite;
+          animation-delay: 1.2s;
+        }
+        @keyframes floatY {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-14px); }
+        }
+        .social-rail {
+          position: fixed;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 50;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        @media (max-width: 760px) {
+          .social-rail { display: none; }
+        }
       `}</style>
 
       {/* NAV */}
@@ -201,21 +237,223 @@ export default function Home() {
         </div>
       )}
 
-      {/* HERO PLACEHOLDER - next step */}
+      {/* SOCIAL RAIL */}
+      <div className="social-rail">
+        {["in", "gh", "tw"].map((tag) => (
+          <a
+            key={tag}
+            href="#contact"
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: "50%",
+              background: "#fff",
+              border: "1px solid rgba(0,0,0,0.1)",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: 11,
+              fontWeight: 700,
+              letterSpacing: "0.02em",
+              color: "var(--ink)",
+            }}
+          >
+            {tag}
+          </a>
+        ))}
+      </div>
+
+      {/* HERO */}
       <section
         id="home"
         style={{
+          position: "relative",
           minHeight: "100vh",
           display: "flex",
-          alignItems: "center",
+          flexDirection: "column",
           justifyContent: "center",
-          padding: "0 16px",
+          padding: "120px 24px 60px",
+          overflow: "hidden",
         }}
       >
-        <p style={{ fontFamily: "var(--font-body)", color: "var(--ink-soft)", textAlign: "center" }}>
-          Hero section goes here — step 2
-        </p>
+        <span
+          className="ghost-name"
+          style={{
+            top: "8%",
+            left: "4%",
+            fontSize: "min(22vw, 180px)",
+          }}
+        >
+          LEVI
+        </span>
+        <span
+          className="ghost-name"
+          style={{
+            bottom: "4%",
+            right: "2%",
+            fontSize: "min(22vw, 180px)",
+          }}
+        >
+          ADOLPHUS
+        </span>
+
+        <div
+          style={{
+            position: "relative",
+            zIndex: 2,
+            maxWidth: 1100,
+            margin: "0 auto",
+            width: "100%",
+          }}
+        >
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "6px 14px",
+              borderRadius: 999,
+              background: "var(--orange-soft)",
+              marginBottom: 24,
+            }}
+          >
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--orange)" }} />
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "#a8430f",
+                fontFamily: "var(--font-body)",
+              }}
+            >
+              Frontend Developer · UI Designer · Creative Problem Solver
+            </span>
+          </div>
+
+          <h1
+            style={{
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
+              fontSize: "min(13vw, 92px)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.01em",
+              margin: 0,
+              color: "var(--ink)",
+            }}
+          >
+            BUILDING<br />
+            DIGITAL<br />
+            SOLUTIONS<br />
+            <span style={{ color: "var(--orange)" }}>THAT LAST</span>
+          </h1>
+
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: 16,
+              color: "var(--ink-soft)",
+              maxWidth: 460,
+              marginTop: 28,
+              lineHeight: 1.6,
+            }}
+          >
+            I design and build clean, functional web products — from idea to
+            deployed app — with a focus on real-world problem solving.
+          </p>
+
+          <div style={{ display: "flex", gap: 14, marginTop: 36, flexWrap: "wrap" }}>
+            <a
+              href="#projects"
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 13,
+                fontWeight: 700,
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
+                color: "#fff",
+                background: "var(--ink)",
+                padding: "16px 28px",
+                borderRadius: 999,
+              }}
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 13,
+                fontWeight: 700,
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
+                color: "var(--ink)",
+                background: "transparent",
+                border: "1.5px solid rgba(20,20,26,0.2)",
+                padding: "16px 28px",
+                borderRadius: 999,
+              }}
+            >
+              Hire Me
+            </a>
+          </div>
+
+          {/* STAT CARD */}
+          <div
+            style={{
+              marginTop: 56,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 20,
+              background: "#fff",
+              border: "1px solid rgba(0,0,0,0.08)",
+              borderRadius: 20,
+              padding: "18px 24px",
+              boxShadow: "0 12px 32px rgba(0,0,0,0.06)",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--orange)",
+                  lineHeight: 1,
+                }}
+              >
+                2+
+              </div>
+              <div
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 10,
+                  fontWeight: 700,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "var(--ink-soft)",
+                  marginTop: 2,
+                }}
+              >
+                Projects
+              </div>
+            </div>
+            <div style={{ width: 1, height: 36, background: "rgba(0,0,0,0.1)" }} />
+            <div style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--ink)", lineHeight: 1.5 }}>
+              Drone Battery Management System<br />
+              Study App
+            </div>
+          </div>
+        </div>
       </section>
+
+      {/* placeholder for next sections */}
+      <section id="about" style={{ minHeight: "40vh" }} />
+      <section id="skills" style={{ minHeight: "40vh" }} />
+      <section id="projects" style={{ minHeight: "40vh" }} />
+      <section id="contact" style={{ minHeight: "40vh" }} />
     </main>
   );
 }
