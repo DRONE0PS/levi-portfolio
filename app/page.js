@@ -35,7 +35,7 @@ export default function Home() {
           position: absolute;
           font-weight: 700;
           color: transparent;
-          -webkit-text-stroke: 1.5px rgba(20,20,26,0.10);
+          -webkit-text-stroke: 2px rgba(20,20,26,0.18);
           line-height: 0.85;
           z-index: 0;
           user-select: none;
@@ -280,9 +280,9 @@ export default function Home() {
         <span
           className="ghost-name"
           style={{
-            top: "8%",
-            left: "4%",
-            fontSize: "min(22vw, 180px)",
+            top: "18%",
+            left: "2%",
+            fontSize: "min(26vw, 220px)",
           }}
         >
           LEVI
@@ -292,7 +292,7 @@ export default function Home() {
           style={{
             bottom: "4%",
             right: "2%",
-            fontSize: "min(22vw, 180px)",
+            fontSize: "min(20vw, 170px)",
           }}
         >
           ADOLPHUS
