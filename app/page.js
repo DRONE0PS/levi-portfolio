@@ -26,12 +26,9 @@ export default function Home() {
         .nav-links-desktop { display: flex; }
         .nav-burger { display: none; }
         @media (max-width: 760px) {
-          .nav-links-desktop { display: none; }
+          .nav-links-desktop { display: none !important; flex: 0 !important; }
           .nav-burger { display: flex; }
           .nav-hire-desktop { display: none; }
-        }
-        .nav-mobile-panel {
-          display: flex;
         }
       `}</style>
 
