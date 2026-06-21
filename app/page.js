@@ -280,9 +280,12 @@ export default function Home() {
         <span
           className="ghost-name"
           style={{
-            top: "18%",
-            left: "2%",
-            fontSize: "min(26vw, 220px)",
+            top: "38%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            fontSize: "min(20vw, 170px)",
+            textAlign: "center",
+            width: "100%",
           }}
         >
           LEVI
@@ -290,9 +293,12 @@ export default function Home() {
         <span
           className="ghost-name"
           style={{
-            bottom: "4%",
-            right: "2%",
-            fontSize: "min(20vw, 170px)",
+            top: "78%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            fontSize: "min(16vw, 130px)",
+            textAlign: "center",
+            width: "100%",
           }}
         >
           ADOLPHUS
@@ -445,7 +451,6 @@ export default function Home() {
               Drone Battery Management System<br />
               PASSMASTER
             </div>
-
           </div>
 
           {/* FLOATING WORKSPACE - EDITOR CARD */}
@@ -459,7 +464,6 @@ export default function Home() {
               borderRadius: 18,
               padding: 0,
               boxShadow: "0 24px 48px rgba(0,0,0,0.18)",
-              transform: "rotate(-3deg)",
               overflow: "hidden",
             }}
           >
