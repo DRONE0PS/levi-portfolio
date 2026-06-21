@@ -446,6 +446,8 @@ export default function Home() {
               PASSMASTER
             </div>
 
+          </div>
+
           {/* FLOATING WORKSPACE - EDITOR CARD */}
           <div
             className="float-slow"
