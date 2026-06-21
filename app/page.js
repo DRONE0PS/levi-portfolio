@@ -695,8 +695,137 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* SKILLS */}
+      <section
+        id="skills"
+        style={{
+          padding: "100px 24px",
+          position: "relative",
+        }}
+      >
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "6px 14px",
+              borderRadius: 999,
+              background: "var(--orange-soft)",
+              marginBottom: 20,
+            }}
+          >
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--orange)" }} />
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "#a8430f",
+                fontFamily: "var(--font-body)",
+              }}
+            >
+              Skills
+            </span>
+          </div>
+
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
+              fontSize: "min(9vw, 56px)",
+              lineHeight: 1.05,
+              margin: 0,
+              maxWidth: 700,
+              color: "var(--ink)",
+            }}
+          >
+            Tools I build with.
+          </h2>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: 16,
+              marginTop: 48,
+            }}
+          >
+            {[
+              { name: "React", level: 60 },
+              { name: "Next.js", level: 50 },
+              { name: "JavaScript", level: 70 },
+              { name: "HTML / CSS", level: 92 },
+              { name: "Supabase", level: 48 },
+              { name: "Git", level: 50 },
+              { name: "Vercel", level: 76 },
+              { name: "Tailwind", level: 50 },
+            ].map((skill) => (
+              <div
+                key={skill.name}
+                style={{
+                  background: "#fff",
+                  border: "1px solid rgba(0,0,0,0.08)",
+                  borderRadius: 18,
+                  padding: "20px",
+                  boxShadow: "0 12px 28px rgba(0,0,0,0.05)",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "baseline",
+                    marginBottom: 12,
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: 15,
+                      fontWeight: 700,
+                      color: "var(--ink)",
+                    }}
+                  >
+                    {skill.name}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: 12,
+                      fontWeight: 700,
+                      color: "var(--orange)",
+                    }}
+                  >
+                    {skill.level}%
+                  </span>
+                </div>
+                <div
+                  style={{
+                    width: "100%",
+                    height: 6,
+                    borderRadius: 999,
+                    background: "rgba(0,0,0,0.06)",
+                    overflow: "hidden",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: `${skill.level}%`,
+                      height: "100%",
+                      borderRadius: 999,
+                      background: "linear-gradient(90deg, #ff6a1f, #ff9357)",
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* placeholder for next sections */}
-      <section id="skills" style={{ minHeight: "40vh" }} />
       <section id="projects" style={{ minHeight: "40vh" }} />
       <section id="contact" style={{ minHeight: "40vh" }} />
     </main>
