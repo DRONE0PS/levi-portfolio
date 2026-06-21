@@ -30,18 +30,6 @@ export default function Home() {
           .nav-burger { display: flex; }
           .nav-hire-desktop { display: none; }
         }
-        .ghost-name {
-          font-family: var(--font-pixel);
-          position: absolute;
-          font-weight: 700;
-          color: transparent;
-          -webkit-text-stroke: 2px rgba(20,20,26,0.18);
-          line-height: 0.85;
-          z-index: 0;
-          user-select: none;
-          pointer-events: none;
-          white-space: nowrap;
-        }
         .float-slow {
           animation: floatY 6s ease-in-out infinite;
         }
@@ -277,33 +265,6 @@ export default function Home() {
           overflow: "hidden",
         }}
       >
-        <span
-          className="ghost-name"
-          style={{
-            top: "38%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            fontSize: "min(20vw, 170px)",
-            textAlign: "center",
-            width: "100%",
-          }}
-        >
-          LEVI
-        </span>
-        <span
-          className="ghost-name"
-          style={{
-            top: "78%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            fontSize: "min(16vw, 130px)",
-            textAlign: "center",
-            width: "100%",
-          }}
-        >
-          ADOLPHUS
-        </span>
-
         <div
           style={{
             position: "relative",
