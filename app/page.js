@@ -37,9 +37,20 @@ export default function Home() {
           animation: floatY 7s ease-in-out infinite;
           animation-delay: 1.2s;
         }
+        .float-slow-delay2 {
+          animation: floatY 5.5s ease-in-out infinite;
+          animation-delay: 0.6s;
+        }
         @keyframes floatY {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-14px); }
+        }
+        .blink-cursor {
+          animation: blink 1s steps(1) infinite;
+        }
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          50.01%, 100% { opacity: 0; }
         }
         .social-rail {
           position: fixed;
@@ -53,6 +64,13 @@ export default function Home() {
         }
         @media (max-width: 760px) {
           .social-rail { display: none; }
+        }
+        .chip-row {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 20px;
         }
       `}</style>
 
@@ -459,6 +477,86 @@ export default function Home() {
               <div>{`}`}</div>
               <div style={{ color: "rgba(255,255,255,0.25)" }}>// shipped 🚀</div>
             </div>
+          </div>
+
+          {/* FLOATING WORKSPACE - TERMINAL CARD */}
+          <div
+            className="float-slow-delay"
+            style={{
+              maxWidth: 380,
+              width: "100%",
+              margin: "20px auto 0",
+              background: "#0e0e12",
+              borderRadius: 18,
+              boxShadow: "0 24px 48px rgba(0,0,0,0.18)",
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.06)",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "10px 16px",
+                borderBottom: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
+              <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ff5f56" }} />
+              <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ffbd2e" }} />
+              <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#27c93f" }} />
+              <span
+                style={{
+                  marginLeft: 8,
+                  fontFamily: "var(--font-body)",
+                  fontSize: 11,
+                  color: "rgba(255,255,255,0.4)",
+                }}
+              >
+                terminal
+              </span>
+            </div>
+            <div style={{ padding: "16px 18px", fontFamily: "monospace", fontSize: 12, lineHeight: 1.9, color: "#a3e6a3" }}>
+              <div>$ git checkout -b feature/fleet-sync</div>
+              <div style={{ color: "rgba(255,255,255,0.5)" }}>Switched to a new branch</div>
+              <div>$ npm run build</div>
+              <div style={{ color: "rgba(255,255,255,0.5)" }}>✓ Compiled successfully</div>
+              <div>
+                $ git push origin main<span className="blink-cursor" style={{ color: "#fff" }}>▍</span>
+              </div>
+            </div>
+          </div>
+
+          {/* CHIP BADGES */}
+          <div className="chip-row">
+            {[
+              { label: "HTML", color: "#e34c26", delay: "float-slow" },
+              { label: "CSS", color: "#2965f1", delay: "float-slow-delay" },
+              { label: "JS", color: "#f0db4f", delay: "float-slow-delay2" },
+              { label: "⎇ main", color: "#1c1c22", delay: "float-slow" },
+            ].map((chip) => (
+              <span
+                key={chip.label}
+                className={chip.delay}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  padding: "8px 16px",
+                  borderRadius: 999,
+                  background: "#fff",
+                  border: "1px solid rgba(0,0,0,0.08)",
+                  boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
+                  fontFamily: "var(--font-body)",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: "var(--ink)",
+                }}
+              >
+                <span style={{ width: 8, height: 8, borderRadius: "50%", background: chip.color }} />
+                {chip.label}
+              </span>
+            ))}
           </div>
         </div>
       </section>
