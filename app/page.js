@@ -6,6 +6,7 @@ import { Code2, LayoutGrid, Lightbulb } from "lucide-react";
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -1038,8 +1039,208 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* CONTACT */}
+      <section
+        id="contact"
+        style={{
+          padding: "100px 24px",
+          position: "relative",
+        }}
+      >
+        <div style={{ maxWidth: 800, margin: "0 auto" }}>
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "6px 14px",
+              borderRadius: 999,
+              background: "var(--orange-soft)",
+              marginBottom: 20,
+            }}
+          >
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--orange)" }} />
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "#a8430f",
+                fontFamily: "var(--font-body)",
+              }}
+            >
+              Contact
+            </span>
+          </div>
+
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
+              fontSize: "min(9vw, 56px)",
+              lineHeight: 1.05,
+              margin: 0,
+              color: "var(--ink)",
+            }}
+          >
+            Lets build something.
+          </h2>
+
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: 16,
+              color: "var(--ink-soft)",
+              marginTop: 16,
+              maxWidth: 480,
+              lineHeight: 1.6,
+            }}
+          >
+            Have a project in mind or just want to say hi? Send a message and Ill get back to you.
+          </p>
+
+          <div
+            style={{
+              background: "#fff",
+              border: "1px solid rgba(0,0,0,0.08)",
+              borderRadius: 24,
+              padding: 28,
+              marginTop: 40,
+              boxShadow: "0 20px 48px rgba(0,0,0,0.06)",
+            }}
+          >
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              <input
+                type="text"
+                placeholder="Your name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 14,
+                  padding: "14px 16px",
+                  borderRadius: 12,
+                  border: "1px solid rgba(0,0,0,0.12)",
+                  background: "var(--bg)",
+                  color: "var(--ink)",
+                  outline: "none",
+                }}
+              />
+              <input
+                type="email"
+                placeholder="Your email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 14,
+                  padding: "14px 16px",
+                  borderRadius: 12,
+                  border: "1px solid rgba(0,0,0,0.12)",
+                  background: "var(--bg)",
+                  color: "var(--ink)",
+                  outline: "none",
+                }}
+              />
+              <textarea
+                placeholder="Your message"
+                rows={5}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 14,
+                  padding: "14px 16px",
+                  borderRadius: 12,
+                  border: "1px solid rgba(0,0,0,0.12)",
+                  background: "var(--bg)",
+                  color: "var(--ink)",
+                  outline: "none",
+                  resize: "vertical",
+                }}
+              />
+              <button
+                onClick={() => {
+                  const subject = encodeURIComponent(`Portfolio inquiry from ${formData.name || "a visitor"}`);
+                  const body = encodeURIComponent(`${formData.message}\n\nFrom: ${formData.name} (${formData.email})`);
+                  window.location.href = `mailto:drone0psapps@gmail.com?subject=${subject}&body=${body}`;
+                }}
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 13,
+                  fontWeight: 700,
+                  letterSpacing: "0.04em",
+                  textTransform: "uppercase",
+                  color: "#fff",
+                  background: "var(--ink)",
+                  padding: "16px 28px",
+                  borderRadius: 999,
+                  marginTop: 4,
+                }}
+              >
+                Send Message
+              </button>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap" }}>
+            <a
+              href="mailto:drone0psapps@gmail.com"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                fontFamily: "var(--font-body)",
+                fontSize: 13,
+                fontWeight: 700,
+                color: "var(--ink)",
+                background: "#fff",
+                border: "1px solid rgba(0,0,0,0.1)",
+                padding: "12px 20px",
+                borderRadius: 999,
+              }}
+            >
+              drone0psapps@gmail.com
+            </a>
+            <a
+              href="https://github.com/DRONE0PS"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                fontFamily: "var(--font-body)",
+                fontSize: 13,
+                fontWeight: 700,
+                color: "var(--ink)",
+                background: "#fff",
+                border: "1px solid rgba(0,0,0,0.1)",
+                padding: "12px 20px",
+                borderRadius: 999,
+              }}
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer
+        style={{
+          padding: "32px 24px",
+          textAlign: "center",
+          fontFamily: "var(--font-body)",
+          fontSize: 12,
+          color: "var(--ink-soft)",
+        }}
+      >
+        © 2026 Levi Adolphus. Built with care.
+      </footer>
       {/* placeholder for next sections */}
-      <section id="contact" style={{ minHeight: "40vh" }} />
     </main>
   );
 }
