@@ -825,8 +825,220 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* PROJECTS */}
+      <section
+        id="projects"
+        style={{
+          padding: "100px 24px",
+          position: "relative",
+        }}
+      >
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "6px 14px",
+              borderRadius: 999,
+              background: "var(--orange-soft)",
+              marginBottom: 20,
+            }}
+          >
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--orange)" }} />
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "#a8430f",
+                fontFamily: "var(--font-body)",
+              }}
+            >
+              Projects
+            </span>
+          </div>
+
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
+              fontSize: "min(9vw, 56px)",
+              lineHeight: 1.05,
+              margin: 0,
+              maxWidth: 700,
+              color: "var(--ink)",
+            }}
+          >
+            Things Ive built.
+          </h2>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 32, marginTop: 48 }}>
+            {[
+              {
+                title: "DroneOps",
+                tagline: "Drone fleet management SaaS",
+                image: "/droneops-1.png",
+                problem: "Managing a fleet of drones often means scattered spreadsheets and disconnected tools. DroneOps centralizes fleet operations, battery analytics, mission planning, and flight logs into one real-time platform.",
+                stack: ["Next.js", "Supabase", "Vercel", "Resend"],
+                features: ["Real-time fleet monitoring", "Battery health analytics", "Mission planning & flight logs", "Real user authentication"],
+                demo: "https://droneops-app.vercel.app",
+                github: "https://github.com/DRONE0PS/droneops-apps",
+              },
+              {
+                title: "PASSMASTER",
+                tagline: "Learn. Practice. Master.",
+                image: "/passmaster-2.png",
+                problem: "Studying for exams is often unstructured. PASSMASTER gives Nigerian university students a focused, CBT-style practice environment so they can train under realistic test conditions across multiple departments.",
+                stack: ["HTML", "CSS", "JavaScript"],
+                features: ["CBT-style quiz engine", "5 academic departments", "Score breakdown & grading", "Dark gold visual identity"],
+                demo: "https://visionary-belekoy-9ee59e.netlify.app",
+                github: null,
+              },
+            ].map((proj) => (
+              <div
+                key={proj.title}
+                style={{
+                  background: "#fff",
+                  border: "1px solid rgba(0,0,0,0.08)",
+                  borderRadius: 24,
+                  overflow: "hidden",
+                  boxShadow: "0 20px 48px rgba(0,0,0,0.07)",
+                }}
+              >
+                <img
+                  src={proj.image}
+                  alt={proj.title}
+                  style={{
+                    width: "100%",
+                    maxHeight: 420,
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                />
+                <div style={{ padding: 28 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap", gap: 8 }}>
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-display)",
+                        fontSize: 24,
+                        fontWeight: 700,
+                        color: "var(--ink)",
+                        margin: 0,
+                      }}
+                    >
+                      {proj.title}
+                    </h3>
+                    <span
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 12,
+                        fontWeight: 700,
+                        color: "var(--orange)",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.06em",
+                      }}
+                    >
+                      {proj.tagline}
+                    </span>
+                  </div>
+
+                  <p
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: 14,
+                      color: "var(--ink-soft)",
+                      lineHeight: 1.6,
+                      marginTop: 14,
+                    }}
+                  >
+                    {proj.problem}
+                  </p>
+
+                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 18 }}>
+                    {proj.stack.map((tech) => (
+                      <span
+                        key={tech}
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          fontSize: 11,
+                          fontWeight: 700,
+                          padding: "6px 12px",
+                          borderRadius: 999,
+                          background: "rgba(20,20,26,0.05)",
+                          color: "var(--ink)",
+                        }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <ul style={{ marginTop: 18, paddingLeft: 18, display: "flex", flexDirection: "column", gap: 6 }}>
+                    {proj.features.map((f) => (
+                      <li
+                        key={f}
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          fontSize: 13,
+                          color: "var(--ink-soft)",
+                        }}
+                      >
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div style={{ display: "flex", gap: 12, marginTop: 24, flexWrap: "wrap" }}>
+                    <a
+                      href={proj.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 13,
+                        fontWeight: 700,
+                        letterSpacing: "0.04em",
+                        textTransform: "uppercase",
+                        color: "#fff",
+                        background: "var(--ink)",
+                        padding: "12px 22px",
+                        borderRadius: 999,
+                      }}
+                    >
+                      Live Demo
+                    </a>
+                    {proj.github && (
+                      <a
+                        href={proj.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          fontSize: 13,
+                          fontWeight: 700,
+                          letterSpacing: "0.04em",
+                          textTransform: "uppercase",
+                          color: "var(--ink)",
+                          background: "transparent",
+                          border: "1.5px solid rgba(20,20,26,0.2)",
+                          padding: "12px 22px",
+                          borderRadius: 999,
+                        }}
+                      >
+                        GitHub
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* placeholder for next sections */}
-      <section id="projects" style={{ minHeight: "40vh" }} />
       <section id="contact" style={{ minHeight: "40vh" }} />
     </main>
   );
