@@ -31,7 +31,6 @@ export default function Home() {
           .nav-links-desktop { display: none !important; flex: 0 !important; }
           .nav-burger { display: flex; }
           .nav-hire-desktop { display: none; }
-          .nav-pill { justify-content: flex-start !important; gap: 12px !important; }
         }
         .float-slow {
           animation: floatY 6s ease-in-out infinite;
@@ -79,7 +78,6 @@ export default function Home() {
 
       {/* NAV */}
       <nav
-        className="nav-pill"
         style={{
           position: "fixed",
           top: scrolled ? 12 : 20,
